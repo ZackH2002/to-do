@@ -1,12 +1,14 @@
 package com.example.todo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.content.Intent;
 import android.media.tv.TvRecordingClient;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         btn_new = (FloatingActionButton) findViewById(R.id.Btn_new);
         lv = findViewById(R.id.lv);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
         adapter = new RecordAdapter(getApplicationContext(), recordList);
         lv.setAdapter(adapter);
         refreshListView();
@@ -107,5 +111,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         intent.putExtra("tag", record.getTag());
         intent.putExtra("id", record.getId());
         startActivityForResult(intent, 1);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);//加载menu文件到布局
+
+        return true;
     }
 }

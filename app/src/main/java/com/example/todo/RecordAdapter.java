@@ -49,7 +49,7 @@ public class RecordAdapter extends BaseAdapter implements Filterable {
         tv_time.setText(recordList.get(position).getTime());
         tv_title.setText(recordList.get(position).getTitle());
         tv_tag.setText(recordList.get(position).getTag());
-        view.setTag(recordList.get(position).getTag());
+        view.setTag(recordList.get(position).getId());
         return view;
     }
 

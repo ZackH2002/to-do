@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".EditActivity">
+    <TextView
+        android:id="@+id/remind"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:text="提醒时间"/>
+    <EditText
+        android:id="@+id/Ed_time"
+        android:layout_toRightOf="@+id/remind"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="top"/>
+    <TextView
+        android:id="@+id/re_title"
+        android:layout_below="@+id/remind"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
+        android:text="输入标题"
+
+        />
+    <EditText
+        android:id="@+id/Ed_title"
+        android:layout_below="@+id/Ed_time"
+        android:layout_toRightOf="@+id/re_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="top"/>
+    <TextView
+        android:id="@+id/re_tag"
+        android:layout_below="@+id/re_title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
+        android:text="输入类型"
+
+        />
+    <EditText
+        android:id="@+id/Ed_tag"
+        android:layout_below="@+id/Ed_title"
+        android:layout_toRightOf="@+id/re_tag"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="top"/>
+    <EditText
+        android:id="@+id/Ed_main"
+        android:layout_below="@+id/Ed_tag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>

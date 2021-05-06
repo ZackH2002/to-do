@@ -12,10 +12,10 @@ public class RecordDatabase extends SQLiteOpenHelper {
     public static final String CONTENT = "content";
     public static final String TIME = "time";
     public static final String MODE = "mode";
-    //public static final String CHECK = "check";
+    //public static final String CHECKED = "checked";
 
     public RecordDatabase(Context context) {
-        super(context, TABLE_NAME, null, 4);
+        super(context, TABLE_NAME, null, 7);
     }
 
     @Override
@@ -25,8 +25,8 @@ public class RecordDatabase extends SQLiteOpenHelper {
                 + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + TITLE + " TEXT NOT NULL,"
                 + CONTENT + " TEXT NOT NULL,"
-                + TIME + " TEXT NOT NULL,"
-                + MODE + " INTEGER DEFAULT 1)"
+                + TIME + " TEXT NOT NULL," + MODE + " INTEGER DEFAULT 1)"
+                 //CHECKED + " INTEGER DEFAULT 1)"
         );
     }
 

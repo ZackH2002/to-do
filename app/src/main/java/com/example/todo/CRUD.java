@@ -19,6 +19,7 @@ public class CRUD {
             RecordDatabase.TITLE,
             RecordDatabase.TIME,
             RecordDatabase.CONTENT,
+            //RecordDatabase.CHECKED,
             RecordDatabase.MODE
     };
 
@@ -41,6 +42,7 @@ public class CRUD {
         contentValues.put(RecordDatabase.CONTENT, record.getContent());
         contentValues.put(RecordDatabase.TIME, record.getTime());
         contentValues.put(RecordDatabase.MODE, record.getTag());
+        //contentValues.put(RecordDatabase.CHECKED,record.getCheck());
         long insetId = db.insert(RecordDatabase.TABLE_NAME, null, contentValues);
         record.setId(insetId);
         return record;
@@ -67,6 +69,7 @@ public class CRUD {
                 record.setContent(cursor.getString(cursor.getColumnIndex(RecordDatabase.CONTENT)));
                 record.setTime(cursor.getString(cursor.getColumnIndex(RecordDatabase.TIME)));
                 record.setTag(cursor.getString(cursor.getColumnIndex(RecordDatabase.MODE)));
+                //record.setCheck(cursor.getString(cursor.getColumnIndex(RecordDatabase.CHECKED)));
                 records.add(record);
 
 
@@ -82,6 +85,7 @@ public class CRUD {
         contentValues.put(RecordDatabase.CONTENT, record.getContent());
         contentValues.put(RecordDatabase.TIME, record.getTime());
         contentValues.put(RecordDatabase.MODE, record.getTag());
+       // contentValues.put(RecordDatabase.CHECKED,record.getCheck());
         return db.update(RecordDatabase.TABLE_NAME, contentValues, RecordDatabase.ID + "=?", new String[]{
                 String.valueOf(record.getId())
         });
